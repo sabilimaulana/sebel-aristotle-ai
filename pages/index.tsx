@@ -13,7 +13,6 @@ const Home = () => {
 
     setIsGenerating(true);
 
-    console.log("Calling OpenAI...");
     const response = await fetch("/api/generate", {
       method: "POST",
       headers: {
@@ -24,7 +23,6 @@ const Home = () => {
 
     const data = await response.json();
     const { output } = data;
-    console.log("OpenAI replied...", output.text);
 
     setApiOutput(`${output.text}`);
     setIsGenerating(false);
@@ -86,22 +84,32 @@ const Home = () => {
         )}
       </div>
 
-      <div className="badge-container grow">
-        <a
-          href="https://buildspace.so/builds/ai-writer"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <div className="badge">
-            <Image
-              src={buildspaceLogo}
-              width={24}
-              height={20}
-              alt="buildspace logo"
-            />
-            <p>build with buildspace</p>
-          </div>
-        </a>
+      <div className="badge-container">
+        <div className="badge">
+          <Image
+            src={buildspaceLogo}
+            width={21}
+            height={17}
+            alt="buildspace logo"
+          />
+
+          <p>
+            <a
+              href="https://buildspace.so/builds/ai-writer"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>build with buildspace</span>
+            </a>
+            <a
+              href="https://twitter.com/sabilimawlana"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span> by sabilimaulana</span>
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   );

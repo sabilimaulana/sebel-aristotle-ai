@@ -32,7 +32,7 @@ body {
   padding: 50px;
   position: relative;
   width: auto;
-  gap: 64px;
+  gap: 30px;
 }
 
 .header {
@@ -217,15 +217,12 @@ textarea {
   z-index: 1;
 }
 
-.badge-container a {
-  border-bottom-width: 1px;
-  border-color: rgba(255, 255, 255, 0.1);
-  border-left-width: 1px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 1px;
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   background-color: rgb(0, 0, 0);
-  border-radius: 54.3478% / 238.095%;
   filter: grayscale(1);
   transform: none;
   transform-origin: 50% 50% 0px;
@@ -238,14 +235,11 @@ textarea {
   text-decoration: none;
 }
 
-.badge {
-  display: flex;
-  align-items: center;
+.badge span {
+  color: #fff;
 }
 
 .badge img {
-  width: 21px;
-  height: 17px;
   image-rendering: pixelated;
   flex-shrink: 0;
   fill: black;
@@ -361,14 +355,19 @@ textarea {
   .container {
     max-width: 400px;
     width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    gap: 30px;
   }
 
   .header-title h1 {
-    font-size: 50px;
+    font-size: 28px;
+    letter-spacing: normal;
   }
 
   .header-subtitle h2 {
     text-align: center;
+    font-size: 18px;
   }
 
   .key-stroke,
@@ -387,6 +386,7 @@ textarea {
 
   .prompt-box {
     width: 100%;
+    box-sizing: border-box;
   }
 }
 
